@@ -123,7 +123,7 @@ export function AddLiquidity({ poolTokenX, poolTokenY, poolBinStep, poolPairAddr
     ? (poolContractData[1].result as string)
     : undefined
   const poolActiveId = poolContractData?.[2]?.status === "success"
-    ? (poolContractData[2].result as bigint)
+    ? Number(poolContractData[2].result)
     : undefined
 
   // Debug: Log contract data status with full details

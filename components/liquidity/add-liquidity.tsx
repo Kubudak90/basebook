@@ -425,7 +425,7 @@ export function AddLiquidity({ poolTokenX, poolTokenY, poolBinStep, poolPairAddr
       setTxHash(hash)
       toast({ title: "Approval submitted", description: `Waiting for ${tokenX.symbol} confirmation...` })
       // Wait for transaction confirmation before refetching
-      await waitForTransactionReceipt(wagmiConfig, { hash })
+      await waitForTransactionReceipt(wagmiConfig as any, { hash })
       await refetchAllowanceX()
       toast({ title: "Approval confirmed", description: `${tokenX.symbol} approved successfully` })
     } catch (error: any) {
@@ -448,7 +448,7 @@ export function AddLiquidity({ poolTokenX, poolTokenY, poolBinStep, poolPairAddr
       setTxHash(hash)
       toast({ title: "Approval submitted", description: `Waiting for ${tokenY.symbol} confirmation...` })
       // Wait for transaction confirmation before refetching
-      await waitForTransactionReceipt(wagmiConfig, { hash })
+      await waitForTransactionReceipt(wagmiConfig as any, { hash })
       await refetchAllowanceY()
       toast({ title: "Approval confirmed", description: `${tokenY.symbol} approved successfully` })
     } catch (error: any) {

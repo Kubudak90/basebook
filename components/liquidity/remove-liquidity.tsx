@@ -160,7 +160,7 @@ export function RemoveLiquidity() {
       // Wait for confirmation
       const { waitForTransactionReceipt } = await import("wagmi/actions")
       const { wagmiConfig } = await import("@/lib/web3/wagmi-config")
-      await waitForTransactionReceipt(wagmiConfig, { hash })
+      await waitForTransactionReceipt(wagmiConfig as any, { hash })
       
       // Refetch approval status
       await refetchPoolData()

@@ -4,18 +4,31 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  webpack: (config) => {
-    // Fix for MetaMask SDK trying to resolve react-native modules
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      '@react-native-async-storage/async-storage': false,
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      // Fix for MetaMask SDK trying to resolve react-native modules
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        '@react-native-async-storage/async-storage': false,
+        'pino-pretty': false,
+      }
     }
-    // Ignore pino-pretty (optional dependency)
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      'pino-pretty': false,
-    }
+    
+    // Ignore these modules entirely
+    config.externals = [
+      ...(config.externals || []),
+      '@react-native-async-storage/async-storage',
+      'pino-pretty',
+    ]
+    
     return config
+  },
+  // Suppress specific warnings
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+  eslint: {
+    ignoreDuringBuilds: false,
   },
 }
 

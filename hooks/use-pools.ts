@@ -83,7 +83,7 @@ export function usePools() {
         }> = []
 
         if (allPairsResults) {
-            allPairsResults.forEach((result, index) => {
+            allPairsResults.forEach((result: any, index) => {
                 if (result?.status === "success" && result.result) {
                     const pairs = result.result as Array<{
                         binStep: bigint

@@ -4,31 +4,19 @@ const nextConfig = {
   images: {
     domains: [],
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      // Fix for MetaMask SDK trying to resolve react-native modules
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        '@react-native-async-storage/async-storage': false,
-        'pino-pretty': false,
-      }
-    }
-    
-    // Ignore these modules entirely
-    config.externals = [
-      ...(config.externals || []),
-      '@react-native-async-storage/async-storage',
-      'pino-pretty',
-    ]
-    
-    return config
+  // Turbopack configuration for Next.js 16
+  experimental: {
+    turbo: {
+      resolveAlias: {
+        // Fix for MetaMask SDK trying to resolve react-native modules
+        '@react-native-async-storage/async-storage': './lib/utils/mock.ts',
+        'pino-pretty': './lib/utils/mock.ts',
+      },
+    },
   },
-  // Suppress specific warnings
+  // TypeScript configuration
   typescript: {
     ignoreBuildErrors: false,
-  },
-  eslint: {
-    ignoreDuringBuilds: false,
   },
 }
 

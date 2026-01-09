@@ -1,6 +1,6 @@
 "use client"
 
-import { createConfig, http } from "@wagmi/core"
+import { createConfig, http, type Config } from "@wagmi/core"
 import { base, baseSepolia } from "@wagmi/core/chains"
 import { coinbaseWallet, injected, walletConnect } from "@wagmi/connectors"
 
@@ -20,4 +20,4 @@ export const wagmiConfig = createConfig({
     [baseSepolia.id]: http(),
     [base.id]: http(),
   },
-})
+}) as Config

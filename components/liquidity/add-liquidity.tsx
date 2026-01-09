@@ -560,13 +560,13 @@ export function AddLiquidity({ poolTokenX, poolTokenY, poolBinStep, poolPairAddr
 
     try {
       const [allowanceXResult, allowanceYResult] = await Promise.all([
-        readContract(wagmiConfig as any, {
+        readContract(wagmiConfig, {
           address: finalTokenX.address as `0x${string}`,
           abi: ERC20ABI,
           functionName: "allowance",
           args: [address, CONTRACTS.LBRouter as `0x${string}`],
         }),
-        readContract(wagmiConfig as any, {
+        readContract(wagmiConfig, {
           address: finalTokenY.address as `0x${string}`,
           abi: ERC20ABI,
           functionName: "allowance",

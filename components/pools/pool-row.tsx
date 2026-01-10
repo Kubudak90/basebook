@@ -6,7 +6,7 @@ import { ChevronDown, ChevronUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { AddLiquidity } from "@/components/liquidity/add-liquidity"
 import { RemoveLiquidity } from "@/components/liquidity/remove-liquidity"
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/animate-ui/components/animate/tabs"
 
 interface PoolRowProps {
     pool: {

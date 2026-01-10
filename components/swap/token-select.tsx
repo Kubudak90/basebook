@@ -1,7 +1,7 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Button } from "@/components/animate-ui/components/buttons/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/animate-ui/components/radix/dialog"
 import { Input } from "@/components/ui/input"
 import { TOKENS } from "@/lib/contracts/addresses"
 import { ChevronDown } from "lucide-react"

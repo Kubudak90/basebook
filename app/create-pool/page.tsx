@@ -3,7 +3,7 @@
 import { useState, useMemo } from "react"
 import { useRouter } from "next/navigation"
 import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/animate-ui/components/buttons/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { TokenSelect } from "@/components/swap/token-select"

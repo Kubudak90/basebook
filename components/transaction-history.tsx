@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/animate-ui/components/buttons/button"
 import { useTransactionHistory, Transaction, TransactionType } from "@/hooks/use-transaction-history"
 import { ArrowRight, ArrowUpDown, Plus, Minus, ExternalLink, Trash2 } from "lucide-react"
 import { formatDistanceToNow } from "date-fns"

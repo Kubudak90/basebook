@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/animate-ui/components/buttons/button"
 import { Spinner } from "@/components/ui/spinner"
 import { usePools } from "@/hooks/use-pools"
 import { useMyPoolLiquidity } from "@/hooks/use-my-pools"

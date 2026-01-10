@@ -3,16 +3,27 @@
 import { SwapCard } from "@/components/swap/swap-card"
 import { PoolPage } from "@/components/pools/pool-page"
 import { LiquidityCard } from "@/components/liquidity/liquidity-card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/animate-ui/components/animate/tabs"
 import { WalletConnectButton } from "@/components/wallet-connect-button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Droplets, Zap, Network, Layers } from "lucide-react"
 import { useState } from "react"
+import { StarsBackground } from "@/components/animate-ui/components/backgrounds/stars"
+import { useTheme } from "next-themes"
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("pool")
+  const { resolvedTheme } = useTheme()
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5">
+    <div className="min-h-screen bg-gradient-to-b from-background via-background to-primary/5 relative overflow-hidden">
+      {/* Animated Stars Background */}
+      <StarsBackground
+        starColor={resolvedTheme === 'dark' ? '#FFF' : '#888'}
+        className="absolute inset-0 -z-10"
+        factor={0.03}
+        speed={30}
+      />
       {/* Header */}
       <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">

@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react"
 import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/animate-ui/components/buttons/button"
 import { TokenSelect } from "@/components/swap/token-select"
 import { CONTRACTS, TOKENS } from "@/lib/contracts/addresses"
 import { useAccount, useWriteContract, useWaitForTransactionReceipt, useReadContract, useReadContracts } from "wagmi"

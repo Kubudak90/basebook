@@ -1,7 +1,7 @@
 "use client"
 
 import { useAccount, useConnect, useDisconnect, useReadContract } from "wagmi"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/animate-ui/components/buttons/button"
 import { Card } from "@/components/ui/card"
 import { CONTRACTS } from "@/lib/contracts/addresses"
 import { LBFactoryABI } from "@/lib/contracts/abis"
